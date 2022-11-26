@@ -16,8 +16,6 @@ public class BooksStepDefs {
     @When("the user navigates to {string} page")
     public void the_user_navigates_to_page(String moduleName) {
         new DashBoardPage().navigateModule(moduleName);
-
-
     }
 
 
@@ -30,8 +28,6 @@ public class BooksStepDefs {
 
     @Then("user should be able to see following categories")
     public void user_should_be_able_to_see_following_categories(List<String> expectedCategoryList) {
-
-
         Assert.assertEquals(expectedCategoryList, actualCategoryList);
 
     }

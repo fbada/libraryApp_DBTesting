@@ -21,10 +21,14 @@ public class BookPage extends BasePage {
     @FindBy(name = "name")
     public WebElement bookName;
 
+    @FindBy(xpath = "//thead//tr//th[contains(@aria-label,'Borrowed')]/.")
+    public WebElement sortByAscBorrower;
 
     @FindBy(xpath = "(//input[@type='text'])[4]")
     public WebElement author;
 
+    @FindBy(xpath = "//div[@class='toast toast-success']")
+    public WebElement successBorrowBanner;
 
     @FindBy(name = "year")
     public WebElement year;
@@ -35,14 +39,13 @@ public class BookPage extends BasePage {
     @FindBy(id = "description")
     public WebElement description;
 
-
+    @FindBy(xpath = "//span[normalize-space()='Borrowing Books']")
+    public WebElement borrowBookModule;
 
     public WebElement editBook(String book) {
         String xpath = "//td[3][.='" + book + "']/../td/a";
         return Driver.getDriver().findElement(By.xpath(xpath));
     }
-
-
 
 
 }
