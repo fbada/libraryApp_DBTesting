@@ -33,13 +33,6 @@ public class BooksStepDefs {
     }
 
 
-    @When("I open book {string}")
-    public void i_open_book(String bookName) {
 
-        System.out.println("bookName = " + bookName);
-        BrowserUtil.waitForClickablility(bookPage.search, 5).sendKeys(bookName);
-        BrowserUtil.waitForClickablility(bookPage.editBook(bookName), 5).click();
-
-    }
 
 }
