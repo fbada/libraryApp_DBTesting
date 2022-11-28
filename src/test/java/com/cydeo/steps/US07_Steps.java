@@ -9,7 +9,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 
-public class US7_StepDefs {
+public class US07_Steps {
     BookPage bookPage = new BookPage();
     BorrowBooksPage borrowBooksPage = new BorrowBooksPage();
     String bookName = null;

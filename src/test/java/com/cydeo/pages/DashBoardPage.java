@@ -26,9 +26,7 @@ public class DashBoardPage extends BasePage
         //h6[normalize-space(.)='Users']//..//h2
 
         String locator="//h6[normalize-space(.)='"+module+"']//..//h2";
-
         WebElement elementOfModule = Driver.getDriver().findElement(By.xpath(locator));
-
         return elementOfModule.getText();
     }
 
