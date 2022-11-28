@@ -51,8 +51,7 @@
         </plugins>
     </build>
 
-        </plugins>
-    </build>
+       
 
 
     <dependencies>
