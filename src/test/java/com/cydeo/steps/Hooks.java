@@ -22,7 +22,6 @@ public class Hooks {
         Driver.getDriver().manage().window().maximize();
         Driver.getDriver().get(ConfigurationReader.getProperty("library_url"));
 
-
     }
 
     @After
@@ -40,7 +39,6 @@ public class Hooks {
 
     @Before("@db")
     public void setupDB(){
-
         DB_Util.createConnection();
         System.out.println("CONNECTION IS SUCCESSFUL");
 

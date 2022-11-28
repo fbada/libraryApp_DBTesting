@@ -28,6 +28,8 @@ public class US01_Steps {
         // compare the lists' size()
         List<String> users = DB_Util.getColumnDataAsList(1);
         Set<String> uniqueUsers = new HashSet<>(users);
+        System.out.println("uniqueUsers.size() = " + uniqueUsers.size());
+        System.out.println("users.size() = " + users.size());
         Assert.assertEquals(uniqueUsers.size(), users.size());
 
     }
