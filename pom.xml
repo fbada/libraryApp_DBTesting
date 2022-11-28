@@ -22,31 +22,13 @@
                 <version>3.0.0-M7</version>
                 <configuration>
                     <parallel>methods</parallel>
-                    <threadCount>3</threadCount>
+                    <threadCount>1</threadCount>
                     <perCoreThreadCount>false</perCoreThreadCount>
                     <testFailureIgnore>true</testFailureIgnore>
                     <includes>
                         <include>**/CukesRunner.java</include>
                     </includes>
                 </configuration>
-            </plugin>
-<plugin>
-                <groupId>net.masterthought</groupId>
-                <artifactId>maven-cucumber-reporting</artifactId>
-                <version>3.15.0</version>
-                <executions>
-                    <execution>
-                        <id>execution</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <outputDirectory>target/cucumber-reports.html</outputDirectory>
-                            <cucumberOutput>target/json-report.json</cucumberOutput>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
