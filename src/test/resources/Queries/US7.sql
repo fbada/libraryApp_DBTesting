@@ -8,10 +8,11 @@ order by 3 desc;
 
 select * from book_borrow;
 
-select b.name as Book_Name, b.isbn as ISBN, b.year as Year, b.author as Author, bc.name as Category
+select b.isbn as ISBN, b.name as Book_Name, b.author as Author,bc.name as Category,  b.year as Year
 from books b
 inner join book_categories bc on b.book_category_id = bc.id
-where b.name ='Clean Code'
+where b.name ='Clean Code' and b.isbn ='09112021'
 limit 1;
 
 
+select b.isbn as ISBN, b.name as Book_Name, b.author as Author,bc.name as Category  b.year as Year
