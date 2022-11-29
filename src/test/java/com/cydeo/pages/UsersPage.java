@@ -34,7 +34,13 @@ public class UsersPage extends BasePage {
     public WebElement userStatusDropdown;
 
     @FindBy(css = ".dataTables_info")
-    private WebElement userCount;
+    public WebElement userCount;
+
+    @FindBy(xpath = "//div[@id='tbl_users_info']")
+    public WebElement userNums;
+
+    @FindBy(xpath = "//select[@id='user_status']")
+    public  WebElement activeInactiveDropdown;
 
     public WebElement editUser(String email) {
         String xpath = "//td[.='" + email + "']/..//a";
@@ -50,4 +56,7 @@ public class UsersPage extends BasePage {
         String xpath = "//span[normalize-space()='" + module + "']";
         return Driver.getDriver().findElement(By.xpath(xpath));
     }
-}
+
+
+    }
+

@@ -81,5 +81,4 @@ public class US08_Steps {
 
         Assert.assertEquals(string2, dBvalue);
     }
-
 }

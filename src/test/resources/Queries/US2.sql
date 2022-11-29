@@ -10,3 +10,6 @@ select count(*) from book_borrow where is_returned=0;
 
 select status from users
 where email = 'librarian43@library';
+
+select  count(*) from users
+where status='INACTIVE';
