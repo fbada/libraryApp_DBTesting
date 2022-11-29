@@ -46,7 +46,6 @@ public class Hooks {
 
     @After("@db")
     public void destroyDB(){
-
         DB_Util.destroy();
         System.out.println("CONNECTION IS CLOSED");
 

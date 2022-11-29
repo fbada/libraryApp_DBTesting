@@ -8,5 +8,10 @@ order by 3 desc;
 
 select * from book_borrow;
 
-select * from books
-where name = 'Head First Java';
+select b.name as Book_Name, b.isbn as ISBN, b.year as Year, b.author as Author, bc.name as Category
+from books b
+inner join book_categories bc on b.book_category_id = bc.id
+where b.name ='Clean Code'
+limit 1;
+
+
