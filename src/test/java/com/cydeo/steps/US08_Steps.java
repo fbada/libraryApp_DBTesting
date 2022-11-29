@@ -56,20 +56,21 @@ public class US08_Steps {
     @Then("the user changes current user status {string} to {string}")
     public void the_user_changes_current_user_status_to(String string, String string2) {
 
-        BrowserUtil.waitFor(2);
         Select select = new Select(usersPage.userStatusDropdown);
         select.selectByVisibleText(string);
         BrowserUtil.waitFor(2);
+
         usersPage.searchUser.sendKeys(user);
         BrowserUtil.waitFor(2);
+
         usersPage.editUser.click();
         BrowserUtil.waitFor(2);
+
         Select sel = new Select(usersPage.statusDropdown);
         sel.selectByVisibleText(string2);
         BrowserUtil.waitFor(2);
+
         usersPage.saveChanges.click();
-        String act = usersPage.toastMessage.getText();
-        BrowserUtil.waitFor(2);
 
         String query = "select status from users\n" +
                 "where email = 'librarian43@library';";
