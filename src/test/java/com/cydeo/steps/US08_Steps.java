@@ -71,7 +71,7 @@ public class US08_Steps {
         BrowserUtil.waitFor(2);
 
         usersPage.saveChanges.click();
-
+        BrowserUtil.waitFor(2);
         String query = "select status from users\n" +
                 "where email = 'librarian43@library';";
         DB_Util.runQuery(query);
