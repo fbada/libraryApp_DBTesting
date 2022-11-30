@@ -15,6 +15,6 @@ Feature: As a librarian, I should be able to add new books to the library
     Then the librarian verify new book from database by "<Book Name>"
     Examples:
       | Book Name                  | ISBN     | Year | Author          | Book Category        |
-      | Better Cleaner APIs v003     | 0914535  | 2021 | Robert C.Martin | Drama                |
-   #   | Head First Java   v002     | 10112021 | 2021 | Kathy Sierra    | Action and Adventure |
-   #   | The Scrum Field Guide v002 | 11112021 | 2006 | Mitch Lacey     | Short Story          |
+      | Better Cleaner APIs v003   | 0914535  | 2021 | Robert C.Martin | Drama                |
+      | Head First Java   AdaF     | 10112021 | 2021 | Kathy Sierra    | Action and Adventure |
+      | The Scrum Field Guide AdaF | 11112021 | 2006 | Mitch Lacey     | Short Story          |

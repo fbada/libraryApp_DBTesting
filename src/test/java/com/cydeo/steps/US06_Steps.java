@@ -18,6 +18,9 @@ public class US06_Steps {
     List<String> DBdata = new ArrayList<>();
     String stringTitle;
     String stringISBN;
+    String stringAuthor;
+    String stringCategory;
+    String year;
 
 
     @When("the librarian click to add book")
@@ -28,40 +31,46 @@ public class US06_Steps {
 
     @When("the librarian enter book name {string}")
     public void the_librarian_enter_book_name(String string) {
-        uidata.add(string);
+
         bookPage.bookName.sendKeys(string);
         stringTitle = string;
     }
 
     @When("the librarian enter ISBN {string}")
     public void the_librarian_enter_isbn(String string) {
-        uidata.add(string);
+
         bookPage.isbn.sendKeys(string);
         stringISBN = string;
     }
 
     @When("the librarian enter year {string}")
     public void the_librarian_enter_year(String string) {
-        uidata.add(string);
+        year = string;
         bookPage.year.sendKeys(string);
     }
 
     @When("the librarian enter author {string}")
     public void the_librarian_enter_author(String string) {
-        uidata.add(string);
+        stringAuthor = string;
         bookPage.author.sendKeys(string);
     }
 
     @When("the librarian choose the book category {string}")
     public void the_librarian_choose_the_book_category(String string) {
         Select select = new Select(bookPage.dropDownGenre);
-        uidata.add(string);
-        select.selectByVisibleText(string);
+        stringCategory = string;
     }
 
     @When("the librarian click to save changes")
     public void the_librarian_click_to_save_changes() {
         BrowserUtil.waitForClickablility(bookPage.saveBook, 3).click();
+
+        uidata.add(stringISBN);
+        uidata.add(stringTitle);
+        uidata.add(stringAuthor);
+        uidata.add(stringCategory);
+        uidata.add(year);
+
     }
 
     @Then("the librarian verify new book by {string}")
@@ -72,7 +81,8 @@ public class US06_Steps {
 
         uidataSearchRes = bookPage.getBookInfo();
         System.out.println(uidataSearchRes);
-
+        System.out.println(uidata);
+        Assert.assertEquals(uidata, uidataSearchRes);
 
     }
 
@@ -80,10 +90,10 @@ public class US06_Steps {
     @Then("the librarian verify new book from database by {string}")
     public void theLibrarianVerifyNewBookFromDatabaseBy(String title) {
 
-        String query="select b.isbn as ISBN, b.name as Book_Name, b.author as Author,bc.name as Category,  b.year as Year\n" +
+        String query = "select b.isbn as ISBN, b.name as Book_Name, b.author as Author,bc.name as Category,  b.year as Year\n" +
                 "from books b\n" +
                 "inner join book_categories bc on b.book_category_id = bc.id\n" +
-                "where b.name ='"+stringTitle+"' and b.isbn ='"+stringISBN+"'\n" +
+                "where b.name ='" + stringTitle + "' and b.isbn ='" + stringISBN + "'\n" +
                 "limit 1;";
 
         DB_Util.runQuery(query);
@@ -93,7 +103,6 @@ public class US06_Steps {
         Assert.assertEquals(DBdata, uidataSearchRes);
 
         System.out.println(DBdata);
-        System.out.println(uidataSearchRes);
 
 
     }

@@ -11,8 +11,9 @@ select * from book_borrow;
 select b.isbn as ISBN, b.name as Book_Name, b.author as Author,bc.name as Category,  b.year as Year
 from books b
 inner join book_categories bc on b.book_category_id = bc.id
-where b.name ='Clean Code' and b.isbn ='09112021'
+where b.name ='Chordeiles minor'
 limit 1;
 
 
-select b.isbn as ISBN, b.name as Book_Name, b.author as Author,bc.name as Category  b.year as Year
+
+

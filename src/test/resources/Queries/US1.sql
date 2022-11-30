@@ -7,7 +7,7 @@ from users;
 select name
 from book_categories;
 
-select name, author, year
+select *
 from books
 where name = 'Chordeiles minor';
 
