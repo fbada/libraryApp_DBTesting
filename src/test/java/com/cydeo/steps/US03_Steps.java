@@ -26,7 +26,6 @@ public class US03_Steps {
     public void i_execute_query_to_get_book_categories() {
         String query = "select name from book_categories";
         DB_Util.runQuery(query);
-        //store data
         databaseList = DB_Util.getColumnDataAsList(1);
         System.out.println("databaseList = " + databaseList);
     }

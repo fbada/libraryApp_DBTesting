@@ -13,8 +13,9 @@ Feature: As a librarian, I should be able to add new books to the library
     And the librarian click to save changes
     Then the librarian verify new book by "<Book Name>"
     Then the librarian verify new book from database by "<Book Name>"
+
     Examples:
-      | Book Name                       | ISBN     | Year | Author      | Book Category |
-      | Better Cleaner APIs v003    | 0914535  | 2021 | Robert C.Martin | Drama                |
-      | Head First Java v010        | 10112021 | 2021 | Kathy Sierra    | Action and Adventure |
-      | Ultimate Scrum Field Guide v211 | 11112021 | 2006 | Mitch Lacey | Short Story   |
+      | Book Name                       | ISBN     | Year | Author          | Book Category        |
+      | Better Cleaner APIs v003        | 0914535  | 2021 | Robert C.Martin | Drama                |
+      | Head First Java v010            | 10112021 | 2021 | Kathy Sierra    | Action and Adventure |
+      | Ultimate Scrum Field Guide v211 | 11112021 | 2006 | Mitch Lacey     | Short Story          |

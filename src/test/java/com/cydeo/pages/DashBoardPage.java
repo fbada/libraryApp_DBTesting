@@ -8,8 +8,6 @@ import org.openqa.selenium.support.FindBy;
 public class DashBoardPage extends BasePage
 {
 
-
-
     @FindBy(id = "borrowed_books")
     public WebElement borrowedBooksNumber;
 
@@ -18,8 +16,6 @@ public class DashBoardPage extends BasePage
 
     @FindBy(id = "book_count")
     public WebElement booksNumber;
-
-
 
 
     public String getModuleCount(String module){

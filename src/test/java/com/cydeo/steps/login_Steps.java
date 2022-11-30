@@ -34,12 +34,11 @@ public class login_Steps {
         usersPage.searchUser.sendKeys(actUIData);
         Assert.assertTrue(usersPage.checkUsername(actUIData).isDisplayed());
         String query = "select email from users\n" +
-                "where email = '"+actUIData+"';";
+                "where email = '" + actUIData + "';";
 
         DB_Util.runQuery(query);
 
-       String expData =  DB_Util.getFirstRowFirstColumn();
-
+        String expData = DB_Util.getFirstRowFirstColumn();
 
         System.out.println("expData = " + expData);
         System.out.println("actUIData = " + actUIData);
