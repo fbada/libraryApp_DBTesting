@@ -58,6 +58,8 @@ public class US06_Steps {
     @When("the librarian choose the book category {string}")
     public void the_librarian_choose_the_book_category(String string) {
         Select select = new Select(bookPage.dropDownGenre);
+        select.selectByVisibleText(string);
+        BrowserUtil.waitFor(1);
         stringCategory = string;
     }
 
